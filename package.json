@@ -1,0 +1,16 @@
+{
+  "name": "node_js_email_server",
+  "version": "1.0.0",
+  "description": "email server using post query",
+  "license": "ISC",
+  "author": "abhinav",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "nodemailer": "^9.0.1"
+  }
+}
