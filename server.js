@@ -1,9 +1,10 @@
 import http from 'http';
 import fs from 'fs'
 import { File } from './file.js';
+import { Emailcl } from './mail.js';
 
 const file = new File();
-
+const mail = new Emailcl()
 export class  Servercl
 {
 serverfn()
@@ -19,7 +20,8 @@ const server = http.createServer((req,res)=>{
            
 
       req.on('end',()=>{
-        file.appendFile(body)
+        file.writeFile(body)
+        mail.mailer()
         res.end('data sent')
       })
 
@@ -34,8 +36,3 @@ server.listen(5000,()=>console.log('server began'))
 
 }
 }
-
-
-
-
-
