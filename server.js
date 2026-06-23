@@ -4,9 +4,9 @@ import { File } from './file.js';
 
 const file = new File();
 
-
-
-export function serverfn()
+export class  Servercl
+{
+serverfn()
 {
 const server = http.createServer((req,res)=>{
 
@@ -33,5 +33,9 @@ const server = http.createServer((req,res)=>{
 server.listen(5000,()=>console.log('server began'))
 
 }
+}
 
-serverfn()
+
+
+
+

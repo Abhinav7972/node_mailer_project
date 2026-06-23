@@ -2,8 +2,12 @@ import  dotenv from 'dotenv'
 dotenv.config({ path: './pass.env' });
 import nodemailer from 'nodemailer'
 
+export class Emailcl
+{
 
-export async function mailer() {
+
+
+ async mailer() {
     const email = process.env.EMAIL_USER?.trim();
     const pass = process.env.EMAIL_PASS?.trim();
     if (!email || !pass) {
@@ -24,7 +28,7 @@ try {
         from: `abhinav <${email}>`,
         to: 'soniabhinav1996@gmail.com',
         subject: 'test',
-        text: 'done'  
+        text: 'done'
     });
     console.log('mail sent');
 } catch (err) {
@@ -32,9 +36,9 @@ try {
 }
 }
 
+}
 
 
-mailer()
 
 
 
