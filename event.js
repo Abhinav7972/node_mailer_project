@@ -5,9 +5,9 @@ import http from 'node:http';
 export class Mailevent extends event.EventEmitter
 {
 
-mailsent(mail)
+mailsent()
 {
-    console.log(mail.email)
+    //console.log('emailsent')
     this.emit('emailSent')
 }
 }
