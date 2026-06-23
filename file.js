@@ -1,8 +1,16 @@
 import fs from 'fs'
 
 
-export function filefn()
+export class File
 {
-const file = fs.readFileSync('./queries.txt').toString();
+constructor()
+{
+this.file = fs.readFileSync('./queries.txt').toString();
+}
+
+appendFile(content) 
+{
+this.file = fs.appendFileSync('./queries.txt',content)
+}
 
 }
