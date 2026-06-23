@@ -3,8 +3,11 @@ dotenv.config({ path: './pass.env' });
 import nodemailer from 'nodemailer'
 import { File } from './file.js';
 import { json } from 'stream/consumers';
+import { Mailevent } from './event.js';
+
 
 const file = new File();
+export const event = new Mailevent();
 export class Emailcl
 {
  async mailer() {
@@ -32,7 +35,9 @@ try {
         subject: 'test',
         text: fdata.message
     });
-    console.log('mail sent');
+    event.emit('emailSent')
+    //event.mailsent()
+    
     console.log(file.readFile())
     
 } catch (err) {
