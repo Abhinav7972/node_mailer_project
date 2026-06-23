@@ -1,12 +1,12 @@
 import  dotenv from 'dotenv'
 dotenv.config({ path: './pass.env' });
 import nodemailer from 'nodemailer'
+import { File } from './file.js';
 
+const file = new File();
+const fdata = file.readFile()
 export class Emailcl
 {
-
-
-
  async mailer() {
     const email = process.env.EMAIL_USER?.trim();
     const pass = process.env.EMAIL_PASS?.trim();
@@ -28,9 +28,11 @@ try {
         from: `abhinav <${email}>`,
         to: 'soniabhinav1996@gmail.com',
         subject: 'test',
-        text: 'done'
+        text: fdata
     });
     console.log('mail sent');
+    console.log(file.readFile())
+    
 } catch (err) {
     console.log('something wrong!', err);
 }
