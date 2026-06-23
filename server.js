@@ -2,6 +2,7 @@ import http from 'http';
 import fs from 'fs'
 import { File } from './file.js';
 import { Emailcl } from './mail.js';
+import { json } from 'stream/consumers';
 
 const file = new File();
 const mail = new Emailcl()
@@ -20,7 +21,8 @@ const server = http.createServer((req,res)=>{
            
 
       req.on('end',()=>{
-        file.writeFile(body)
+        const data = JSON.parse(body)
+        file.writeFile(JSON.stringify(data))
         mail.mailer()
         res.end('data sent')
       })
