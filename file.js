@@ -3,14 +3,15 @@ import fs from 'fs'
 
 export class File
 {
-constructor()
+
+writeFile(content) 
 {
-this.file = fs.readFileSync('./queries.txt').toString();
+this.file = fs.writeFileSync('./queries.txt',content)
 }
 
-appendFile(content) 
+readFile()
 {
-this.file = fs.appendFileSync('./queries.txt',content)
+    return  fs.readFileSync('./queries.txt','utf-8')
 }
 
 }
