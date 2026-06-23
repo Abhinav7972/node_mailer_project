@@ -21,7 +21,7 @@ export async function mailer() {
 
 try {
     const mail = await tr.sendMail({
-        from: 'abhinavsoni316@gmail.com',
+        from: `abhinav <${email}>`,
         to: 'soniabhinav1996@gmail.com',
         subject: 'test',
         text: 'done'  
